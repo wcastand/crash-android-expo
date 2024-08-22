@@ -1,41 +1,78 @@
 {
-  "expo": {
-    "name": "test-android-crash",
-    "slug": "test-android-crash",
-    "version": "1.0.0",
-
-    "scheme": "test-android-crash",
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/favicon.png"
-    },
-    "plugins": ["expo-router"],
-    "experiments": {
-      "typedRoutes": true,
-
-      "tsconfigPaths": true
-    },
-
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-
-    "userInterfaceStyle": "light",
-
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
-    }
-  }
+	"expo": {
+		"name": "test-android-crash",
+		"slug": "test-android-crash",
+		"version": "1.0.0",
+		"scheme": "test-android-crash",
+		"web": {
+			"bundler": "metro",
+			"output": "static",
+			"favicon": "./assets/favicon.png"
+		},
+		"plugins": [
+			"expo-asset",
+			"expo-font",
+			"expo-localization",
+			[
+				"expo-quick-actions",
+				{
+					"androidIcons": {
+						"shortcut_compose": {
+							"foregroundImage": "./assets/images/adaptive-icon.png",
+							"backgroundColor": "#0D9488"
+						}
+					}
+				}
+			],
+			[
+				"expo-notifications",
+				{
+					"icon": "./assets/images/notif_icon.png",
+					"color": "#FFFFFF"
+				}
+			],
+			[
+				"expo-secure-store",
+				{
+					"faceIDPermission": "Souhaite utiliser faceID pour vous authentifier"
+				}
+			],
+			[
+				"expo-build-properties",
+				{
+					"android": {
+						"compileSdkVersion": 34
+					},
+					"ios": {
+						"deploymentTarget": "15.0"
+					}
+				}
+			],
+			"expo-router"
+		],
+		"experiments": {
+			"typedRoutes": true,
+			"tsconfigPaths": true
+		},
+		"orientation": "portrait",
+		"icon": "./assets/icon.png",
+		"userInterfaceStyle": "light",
+		"splash": {
+			"image": "./assets/splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#ffffff"
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "com.wcastand.testandroidcrash"
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/adaptive-icon.png",
+				"backgroundColor": "#ffffff"
+			},
+			"package": "com.wcastand.testandroidcrash"
+		}
+	}
 }
